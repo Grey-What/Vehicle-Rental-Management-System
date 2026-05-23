@@ -8,31 +8,33 @@ using namespace std;
 
 class Vehicle {
 private:
-    Qstring id;
-    Qstring brand;
-    Qstring model;
-    Qstring pricePerDay;
+    QString id;
+    QString brand;
+    QString model;
+    double pricePerDay;
     bool isRented;
 
 public:
     virtual QString typeName() const = 0;
-    virtual QString displayInfo() const;
+    virtual void displayInfo() const;
 
 
-    void setId(Qstring id);
-    Qstring getId();
+    void setId(QString id);
+    QString getId() const;
 
-    void setBrand(Qstring brand);
-    Qstring getBrand();
+    void setBrand(QString brand);
+    QString getBrand() const;
 
-    void setModel(Qstring model);
-    Qstring getModel();
+    void setModel(QString model);
+    QString getModel() const;
 
     void setPricePerDay(double pricePerDay);
-    Qstring getPricePerDay();
+    double getPricePerDay() const;
 
     void setIsRented(bool isRented);
-    bool getIsRented();
+    bool getIsRented() const;
+
+    virtual ~Vehicle();
 };
 
 #endif

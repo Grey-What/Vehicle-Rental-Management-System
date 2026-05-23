@@ -4,25 +4,35 @@
 #include "car.h"
 #include "main.h"
 
-Qstring Car::typeName()
+QString Car::typeName() const
 {
     return "Car";
 }
 
-void Car::displayInfo()
+void Car::displayInfo() const
 {
-    cout << "Vehicle Specifications:" << endl;
-    cout << "ID: " << Car::id << endl;
-    cout << "Brand: " << Car::brand << endl;
-    cout << "Model: " << Car::model << endl;
-    cout << "Number of doors: " << Car::numberOfDoors << endl;
-    cout << "Number of seats: " << Car::numberOfSeats << endl;
-    cout << "Price Per Day: " << Car::pricePerDay << endl;
-    cout << "Currently Rented: " << Car::isRented << endl;
+    Vehicle::displayInfo();
+    cout << "Number of doors: " << numberOfDoors << endl;
+    cout << "Number of seats: " << numberOfSeats << endl;
+
 }
 
-void Car::setNumberOfDoors(int numberOfDoors);
-int Car::getNumberOfDoors();
+void Car::setNumberOfDoors(int numberOfDoors)
+{
+    this->numberOfDoors = numberOfDoors;
+}
 
-void Car::setNumberofSeats(int numberofSeats);
-int Car::getNumberofSeats();
+int Car::getNumberOfDoors()
+{
+    return numberOfDoors;
+}
+
+void Car::setNumberOfSeats(int numberOfSeats)
+{
+    this->numberOfSeats = numberOfSeats;
+}
+
+int Car::getNumberOfSeats()
+{
+    return numberOfSeats;
+}

@@ -11,8 +11,8 @@ private:
     int numberOfSeats;
 
 public:
-    Qstring typeName() override;
-    Qstring displayInfo();
+    QString typeName() const override;
+    void displayInfo() const override;
 
     void setNumberOfDoors(int numberOfDoors);
     int getNumberOfDoors();
