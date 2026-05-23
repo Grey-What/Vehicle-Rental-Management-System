@@ -1,7 +1,4 @@
 // Implementation of Vehicle derived class Car
-#include <iostream>
-#include <QString>
-#include "car.h"
 #include "main.h"
 
 QString Car::typeName() const
@@ -15,6 +12,14 @@ void Car::displayInfo() const
     cout << "Number of doors: " << numberOfDoors << endl;
     cout << "Number of seats: " << numberOfSeats << endl;
 
+}
+
+Car::Car(QString id, QString brand, QString model, double pricePerDay,
+         bool isRented, int numberOfDoors, int numberOfSeats)
+    : Vehicle(id, brand, model, pricePerDay, isRented)
+{
+    this->numberOfDoors = numberOfDoors;
+    this->numberOfSeats = numberOfSeats;
 }
 
 void Car::setNumberOfDoors(int numberOfDoors)

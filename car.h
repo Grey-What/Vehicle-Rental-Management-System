@@ -11,6 +11,8 @@ private:
     int numberOfSeats;
 
 public:
+    Car(QString id, QString brand, QString model, double pricePerDay,
+        bool isRented, int numberOfDoors, int numberOfSeats);
     QString typeName() const override;
     void displayInfo() const override;
 

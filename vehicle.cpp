@@ -1,15 +1,30 @@
 // Implimentation file for Base class
-#include "vehicle.h"
-#include <iostream>
+#include "main.h"
 
 void Vehicle::displayInfo() const
 {
-    cout << "Vehicle Specifications:" << endl;
-    cout << "ID: " << id.toStdString() << endl;
-    cout << "Brand: " << brand.toStdString() << endl;
-    cout << "Model: " << model.toStdString() << endl;
-    cout << "Price Per Day: " << pricePerDay << endl;
-    cout << "Currently Rented: " << isRented << endl;
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+
+    out << "Vehicle Specifications:" << Qt::endl;
+    out << "ID: " << id << Qt::endl;
+    out << "Brand: " << brand << Qt::endl;
+    out << "Model: " << model << Qt::endl;
+    out << "Price Per Day: " << pricePerDay << Qt::endl;
+    out << "Currently Rented: " << isRented << Qt::endl;
+}
+
+Vehicle::Vehicle(QString id,
+                 QString brand,
+                 QString model,
+                 double pricePerDay,
+                 bool isRented)
+{
+    this->id = id;
+    this->brand = brand;
+    this->model = model;
+    this->pricePerDay = pricePerDay;
+    this->isRented = isRented;
 }
 
 void Vehicle::setId(QString id)

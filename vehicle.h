@@ -2,7 +2,6 @@
 
 #ifndef VEHICLE_M
 #define VEHICLE_M
-#include <iostream>
 #include <QString>
 using namespace std;
 
@@ -17,6 +16,12 @@ private:
 public:
     virtual QString typeName() const = 0;
     virtual void displayInfo() const;
+
+    Vehicle(QString id,
+            QString brand,
+            QString model,
+            double pricePerDay,
+            bool isRented);
 
 
     void setId(QString id);
