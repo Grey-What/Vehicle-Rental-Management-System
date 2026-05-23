@@ -1,19 +1,44 @@
 #include <QCoreApplication>
+#include <iostream>
+#include "main.h"
+using namespace std;
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    QCoreApplication a(argc, argv);  
 
-    // Set up code that uses the Qt event loop here.
-    // Call QCoreApplication::quit() or QCoreApplication::exit() to quit the application.
-    // A not very useful example would be including
-    // #include <QTimer>
-    // near the top of the file and calling
-    // QTimer::singleShot(5000, &a, &QCoreApplication::quit);
-    // which quits the application after 5 seconds.
+    int option = 0;
 
-    // If you do not need a running Qt event loop, remove the call
-    // to QCoreApplication::exec() or use the Non-Qt Plain C++ Application template.
+    do {
+        displayMenu();
 
-    return QCoreApplication::exec();
+        cin >> option;
+
+
+        switch (option)
+        {
+        case 1:
+            //addVehicle();
+            break;
+        case 2:
+            //SearchVehicleID();
+            break;
+        case 3:
+            //displayAvailableVehicle();
+            break;
+        case 4:
+            //displayAllVehicle();
+            break;
+        case 5:
+            //rentVehicle();
+            break;
+        case 6:
+            break;
+        default:
+            cout << "Invalid Option" << endl;
+        }
+    } while (option != 6);
+
+    return 0;
 }
+
