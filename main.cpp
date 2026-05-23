@@ -13,6 +13,15 @@ int main(int argc, char *argv[])
         displayMenu();
 
         cin >> option;
+        if(!(cin >> option))
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+
+            cout << "Invalid input. Enter a number." << endl;
+
+            option = 0;
+        }
 
 
         switch (option)
