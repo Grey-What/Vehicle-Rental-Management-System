@@ -1,5 +1,16 @@
 // Implimentation file for Base class
 #include "vehicle.h"
+#include <iostream>
+
+QString Vehicle::displayInfo() const
+{
+    cout << "Vehicle Specifications:" << endl;
+    cout << "ID: " << Vehicle::id << endl;
+    cout << "Brand: " << Vehicle::brand << endl;
+    cout << "Model: " << Vehicle::model<< endl;
+    cout << "Price Per Day: " << Vehicle::pricePerDay << endl;
+    cout << "Currently Rented: " << Vehicle::isRented << endl;
+}
 
 void Vehicle::setId(Qstring id)
 {
