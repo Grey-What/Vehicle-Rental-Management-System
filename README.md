@@ -6,6 +6,8 @@ Core). The goal is to demonstrate Object-Oriented Programming (OOP) principles
 file handling, and rental/return state management. 
 
 ### Running Program:
+Open the Cmake file in QT Creator
+
 0. Ensure the following settings:
     - Ensure In Qt Creator:
     - Projects

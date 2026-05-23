@@ -1,24 +1,34 @@
 #include <QCoreApplication>
-#include <iostream>
 #include "main.h"
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);  
+    QCoreApplication a(argc, argv);
 
-    int option = 0;
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+
+    QString optionString;
+    int option;
 
     do {
         displayMenu();
 
-        cin >> option;
+        optionString = in.readLine();
 
+        bool ok;
+        option = optionString.toInt(&ok);
+
+        if(!ok)
+        {
+            out << "Invalid number!" << Qt::endl;
+        }
 
         switch (option)
         {
         case 1:
-            //addVehicle();
+            addVehicle();
             break;
         case 2:
             //SearchVehicleID();
@@ -35,7 +45,7 @@ int main(int argc, char *argv[])
         case 6:
             break;
         default:
-            cout << "Invalid Option" << endl;
+            out << "Invalid Option" << Qt::endl;
         }
     } while (option != 6);
 
