@@ -5,6 +5,7 @@
 #include <QTextStream>
 #include "vehicle.h"
 #include "car.h"
+#include "motorcycle.h"
 using namespace std;
 
 void displayMenu();
