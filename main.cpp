@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
             addVehicle(manager);
             break;
         case 2:
-            //SearchVehicleID();
+            manager.searchVehicleID();
             break;
         case 3:
             manager.displayAllVehicles();

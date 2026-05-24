@@ -14,6 +14,8 @@ private:
 public:
     void addVehicle(Vehicle* vehicle);
 
+    void searchVehicleID();
+
     void displayAllVehicles() const;
 
     ~VehicleManager();
