@@ -78,4 +78,13 @@ bool Vehicle::getIsRented() const
     return isRented;
 }
 
+void Vehicle::save(QTextStream &out) const
+{
+    out << this->id << "|"
+        << this->brand << "|"
+        << this->model << "|"
+        << this->pricePerDay << "|"
+        << this->isRented;
+}
+
 Vehicle::~Vehicle(){}

@@ -15,6 +15,7 @@ public:
         bool isRented, int numberOfDoors, int numberOfSeats);
     QString typeName() const override;
     void displayInfo() const override;
+    void save(QTextStream& out) const override;
 
     void setNumberOfDoors(int numberOfDoors);
     int getNumberOfDoors();

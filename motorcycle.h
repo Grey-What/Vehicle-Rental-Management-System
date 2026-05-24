@@ -14,6 +14,7 @@ public:
         bool isRented, int engineCapacityCC);
     QString typeName() const override;
     void displayInfo() const override;
+    void save(QTextStream& out) const override;
 
     void setEngineCapacityCC(int engineCapacityCC);
     int getEngineCapacityCC();

@@ -32,3 +32,13 @@ int Motorcycle::getEngineCapacityCC()
 {
     return engineCapacityCC;
 }
+
+void Motorcycle::save(QTextStream& out) const
+{
+    out << this->typeName() << "|";
+
+    Vehicle::save(out);
+
+    out << "|"
+        << this->engineCapacityCC << "\n";
+}

@@ -16,6 +16,7 @@ private:
 public:
     virtual QString typeName() const = 0;
     virtual void displayInfo() const;
+    virtual void save(QTextStream& out) const;
 
     Vehicle(QString id,
             QString brand,

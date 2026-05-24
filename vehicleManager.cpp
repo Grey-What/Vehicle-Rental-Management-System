@@ -61,8 +61,8 @@ void VehicleManager::rentVehicle()
             {
                 vehicle->displayInfo();
                 vehicle->setIsRented(true);
-                cout << "Success" << Qt::endl;
-                cout << "Enjoy the ride!" << Qt::endl;
+                out << "Success" << Qt::endl;
+                out << "Enjoy the ride!" << Qt::endl;
                 return;
             }
         }
@@ -88,13 +88,89 @@ void VehicleManager::returnVehicle()
             {
                 vehicle->displayInfo();
                 vehicle->setIsRented(false);
-                cout << "Success" << Qt::endl;
-                cout << "Thank you for your support" << Qt::endl;
+                out << "Success!" << Qt::endl;
+                out << "Thank you for your support" << Qt::endl;
                 return;
             }
         }
         out << "Unsuccesful. Try again" << Qt::endl;
     }
+}
+
+void VehicleManager::saveToFile() const
+{
+    QFile file(VEHICLE_FILENAME);
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        return;
+    }
+
+    QTextStream out(&file);
+
+    for(Vehicle* vehicle : vehicles)
+    {
+        vehicle->save(out);
+    }
+
+    file.close();
+}
+
+void VehicleManager::loadFromFile()
+{
+    QFile file(VEHICLE_FILENAME);
+
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream out(stdout);
+        out << "Failed to open file. Restart program" << Qt::endl;
+        return;
+    }
+
+    QTextStream in(&file);
+
+    while(!in.atEnd())
+    {
+        QString line = in.readLine();
+
+        QStringList parts = line.split("|");
+
+        if (parts.size() < 7)
+        {
+            continue;
+        }
+
+        QString type = parts[0].toLower();
+
+        if(type == "car")
+        {
+            vehicles.push_back(
+                new Car(
+                    parts[1],
+                    parts[2],
+                    parts[3],
+                    parts[4].toDouble(),
+                    parts[5].toInt(),
+                    parts[6].toInt(),
+                    parts[7].toInt()
+                    )
+                );
+        }
+
+        else if(type == "motorcycle")
+        {
+            vehicles.push_back(
+                new Motorcycle(
+                    parts[1],
+                    parts[2],
+                    parts[3],
+                    parts[4].toDouble(),
+                    parts[5].toInt(),
+                    parts[6].toInt()
+                    )
+                );
+        }
+    }
+    file.close();
 }
 
 VehicleManager::~VehicleManager()
@@ -104,3 +180,4 @@ VehicleManager::~VehicleManager()
         delete vehicle;
     }
 }
+
