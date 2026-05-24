@@ -5,11 +5,15 @@
 #include <QTextStream>
 #include <QFile>
 #include <vector>
+#include <QDebug>
+#include <QFileInfo>
 #include "vehicle.h"
 #include "car.h"
 #include "motorcycle.h"
 #include "vehicleManager.h"
 using namespace std;
+
+inline const QString VEHICLE_FILENAME = "VehicleData.txt";
 
 void displayMenu();
 bool rentStatus();

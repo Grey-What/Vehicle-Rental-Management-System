@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     QTextStream in(stdin);
 
     VehicleManager manager;
+    manager.loadFromFile();
 
     QString optionString;
     int option;
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
         {
         case 1:
             addVehicle(manager);
+            manager.saveToFile();
             break;
         case 2:
             manager.searchVehicleID();
@@ -43,9 +45,11 @@ int main(int argc, char *argv[])
             break;
         case 5:
             manager.rentVehicle();
+            manager.saveToFile();
             break;
         case 6:
             manager.returnVehicle();
+            manager.saveToFile();
             break;
         case 7:
             break;
