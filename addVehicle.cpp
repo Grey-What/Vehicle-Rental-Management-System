@@ -58,8 +58,9 @@ QString addCar(VehicleManager& manager,
             model,
             pricePerDay,
             isRented,
-            numberOfSeats,
-            numberOfDoors)
+            numberOfDoors,
+            numberOfSeats
+            )
         );
 
     out << "Object created" << Qt::endl;
@@ -77,7 +78,7 @@ void addVehicle(VehicleManager& manager)
     QString brand;
     QString model;
     double pricePerDay;
-    bool isRented;
+    bool isRented = false;
 
     do {
         out << "Type of Vehicle to add:" << Qt::endl;
@@ -105,13 +106,12 @@ void addVehicle(VehicleManager& manager)
     out << "Enter model: " << Qt::endl;
     model = in.readLine();
 
-    out << "Enter pricePerDay: " << Qt::endl;
+    out << "Enter price Per Day: " << Qt::endl;
     QString pricePerDayString = in.readLine();
     pricePerDay = pricePerDayString.toDouble();
 
-    out << "Enter isRented: " << Qt::endl;
-    QString isRentedString = in.readLine();
-    isRented = (isRentedString.toLower() == "true");
+    out << "Is this vehicle currently rented: " << Qt::endl;
+    isRented = rentStatus();
 
     switch (option) {
     case 1:

@@ -20,6 +20,8 @@ public:
 
     void displayAvailableVehicles();
 
+    void rentVehicle();
+
     ~VehicleManager();
 };
 
