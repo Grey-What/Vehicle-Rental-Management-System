@@ -88,3 +88,48 @@ double validPrice()
         return pricePerDay;
     }
 }
+
+QString notEmpty()
+{
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+    QString input;
+
+    while (true)
+    {
+        input = in.readLine();
+
+        if (input.trimmed().isEmpty())
+        {
+            out << "input cannot be empty." << Qt::endl;
+            out << "Try again." << Qt::endl;
+        }
+        else
+        {
+            return input;
+        }
+    }
+}
+
+int validNumber()
+{
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+    QString input;
+
+    while (true)
+    {
+        input = in.readLine();
+
+        bool ok;
+        int inputInt = input.toInt(&ok);
+
+        if(!ok)
+        {
+            out << "Invalid number!" << Qt::endl;
+            out << "Try again: " << Qt::endl;
+            continue;
+        }
+        return inputInt;
+    }
+}

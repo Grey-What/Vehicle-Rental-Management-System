@@ -13,8 +13,7 @@ QString addMotorcycle(VehicleManager& manager,
     int engineCapacityCC;
 
     out << "Enter Engine Capacity CC: " << Qt::endl;
-    QString engineCapacityCCString = in.readLine();
-    engineCapacityCC = engineCapacityCCString.toInt();
+    engineCapacityCC = validNumber();
 
     manager.addVehicle(
         new Motorcycle(
@@ -43,12 +42,10 @@ QString addCar(VehicleManager& manager,
     int numberOfSeats;
 
     out << "Enter numberOfDoors: " << Qt::endl;
-    QString numberOfDoorsString = in.readLine();
-    numberOfDoors = numberOfDoorsString.toInt();
+    numberOfDoors = validNumber();
 
     out << "Enter numberOfSeats: " << Qt::endl;
-    QString numberOfSeatsString = in.readLine();
-    numberOfSeats = numberOfSeatsString.toInt();
+    numberOfSeats = validNumber();
 
     manager.addVehicle(
         new Car(
@@ -85,12 +82,9 @@ void addVehicle(VehicleManager& manager)
         out << "2. MotorCycle" << Qt::endl;
 
         out << "Enter option: " << Qt::endl;
-        QString optionString = in.readLine();
+        option = validNumber();
 
-        bool ok;
-        option = optionString.toInt(&ok);
-
-        if(!ok || (option != 1 && option != 2))
+        if(option != 1 && option != 2)
         {
             out << "Invalid number!" << Qt::endl;
         }
@@ -99,10 +93,10 @@ void addVehicle(VehicleManager& manager)
     id = validId(manager);
 
     out << "Enter brand: " << Qt::endl;
-    brand = in.readLine();
+    brand = notEmpty();
 
     out << "Enter model: " << Qt::endl;
-    model = in.readLine();
+    model = notEmpty();
 
     pricePerDay = validPrice();
 

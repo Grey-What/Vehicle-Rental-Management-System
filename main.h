@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <QString>
-#include <iostream>
 #include <QTextStream>
 #include <QFile>
 #include <vector>
@@ -19,6 +18,8 @@ void displayMenu();
 bool rentStatus();
 QString validId(VehicleManager& manager);
 double validPrice();
+QString notEmpty();
+int validNumber();
 void addVehicle(VehicleManager& manager);
 
 #endif

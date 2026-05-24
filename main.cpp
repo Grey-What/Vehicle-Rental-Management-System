@@ -12,21 +12,12 @@ int main(int argc, char *argv[])
     VehicleManager manager;
     manager.loadFromFile();
 
-    QString optionString;
     int option;
 
     do {
         displayMenu();
 
-        optionString = in.readLine();
-
-        bool ok;
-        option = optionString.toInt(&ok);
-
-        if(!ok)
-        {
-            out << "Invalid number!" << Qt::endl;
-        }
+        option = validNumber();
 
         switch (option)
         {
