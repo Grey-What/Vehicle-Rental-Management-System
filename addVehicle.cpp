@@ -105,13 +105,12 @@ void addVehicle(VehicleManager& manager)
     out << "Enter model: " << Qt::endl;
     model = in.readLine();
 
-    out << "Enter pricePerDay: " << Qt::endl;
+    out << "Enter price Per Day: " << Qt::endl;
     QString pricePerDayString = in.readLine();
     pricePerDay = pricePerDayString.toDouble();
 
-    out << "Enter isRented: " << Qt::endl;
-    QString isRentedString = in.readLine();
-    isRented = (isRentedString.toLower() == "true");
+    out << "Is this vehicle currently rented: " << Qt::endl;
+    isRented = rentStatus();
 
     switch (option) {
     case 1:
