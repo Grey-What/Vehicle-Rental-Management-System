@@ -28,8 +28,3 @@ Motorcycle|M012|Benelli|TNT300|390|1|300
 Motorcycle|M013|CFMoto|650NK|520|0|650
 Motorcycle|M014|Indian|ScoutBobber|1350.75|1|1133
 Motorcycle|M015|MVAgusta|Brutale800|1450|0|800
-Car|123|Merc|2016|100.25|0|4|7
-Car|567|Audi|2026|100.25|1|4|5
-Motorcycle|7685|Audi|216|123.56|0|250
-Car|456|Merc|Merc|100.1|1|4|5
-Car|rsdg|merc|2016|100.2|1|4|5

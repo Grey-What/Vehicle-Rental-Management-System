@@ -12,7 +12,7 @@ void Vehicle::displayInfo() const
     out << "Brand: " << brand << Qt::endl;
     out << "Model: " << model << Qt::endl;
     out << "Price Per Day: " << pricePerDay << Qt::endl;
-    out << "Currently Rented: " << isRented << Qt::endl;
+    out << "Currently Rented: " << boolToWord(isRented) << Qt::endl;
 }
 
 Vehicle::Vehicle(QString id,

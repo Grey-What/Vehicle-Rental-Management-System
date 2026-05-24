@@ -133,3 +133,9 @@ int validNumber()
         return inputInt;
     }
 }
+
+QString boolToWord(bool value)
+{
+    QString word = value ? "Yes" : "No";
+    return word;
+}

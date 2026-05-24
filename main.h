@@ -20,6 +20,8 @@ QString validId(VehicleManager& manager);
 double validPrice();
 QString notEmpty();
 int validNumber();
+QString boolToWord(bool value);
 void addVehicle(VehicleManager& manager);
+
 
 #endif
