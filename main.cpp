@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
     QTextStream out(stdout);
     QTextStream in(stdin);
 
+    VehicleManager manager;
+
     QString optionString;
     int option;
 
@@ -28,26 +30,29 @@ int main(int argc, char *argv[])
         switch (option)
         {
         case 1:
-            addVehicle();
+            addVehicle(manager);
             break;
         case 2:
             //SearchVehicleID();
             break;
         case 3:
-            //displayAvailableVehicle();
+            manager.displayAllVehicles();
             break;
         case 4:
-            //displayAllVehicle();
+            //displayAvailableVehicle();
             break;
         case 5:
             //rentVehicle();
             break;
         case 6:
+            //returnVehicle();
+            break;
+        case 7:
             break;
         default:
             out << "Invalid Option" << Qt::endl;
         }
-    } while (option != 6);
+    } while (option != 7);
 
     return 0;
 }

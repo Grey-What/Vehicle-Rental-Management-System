@@ -1,6 +1,7 @@
 //Function to collect input from user to instantiate Vehicle object
 #include "main.h"
-QString addMotorcycle(QString id,
+QString addMotorcycle(VehicleManager& manager,
+                      QString id,
                       QString brand,
                       QString model,
                       double pricePerDay,
@@ -15,14 +16,22 @@ QString addMotorcycle(QString id,
     QString engineCapacityCCString = in.readLine();
     engineCapacityCC = engineCapacityCCString.toInt();
 
-    Motorcycle* Motorcycle1 = new Motorcycle(id, brand, model, pricePerDay, isRented, engineCapacityCC);
-    out << "Object created" << Qt::endl;
-    Motorcycle1->displayInfo();
+    manager.addVehicle(
+        new Motorcycle(
+            id,
+            brand,
+            model,
+            pricePerDay,
+            isRented,
+            engineCapacityCC)
+        );
 
-    return "Success";
+    out << "Object created" << Qt::endl;
+    return "Success\n";
 }
 
-QString addCar(QString id,
+QString addCar(VehicleManager& manager,
+               QString id,
                QString brand,
                QString model,
                double pricePerDay,
@@ -42,14 +51,22 @@ QString addCar(QString id,
     QString numberOfSeatsString = in.readLine();
     numberOfSeats = numberOfSeatsString.toInt();
 
-    Car* car1 = new Car(id, brand, model, pricePerDay, isRented, numberOfSeats, numberOfDoors);
-    out << "Object created" << Qt::endl;
-    car1->displayInfo();
+    manager.addVehicle(
+        new Car(
+            id,
+            brand,
+            model,
+            pricePerDay,
+            isRented,
+            numberOfSeats,
+            numberOfDoors)
+        );
 
-    return "Success";
+    out << "Object created" << Qt::endl;
+    return "Success\n";
 }
 
-void addVehicle()
+void addVehicle(VehicleManager& manager)
 {
     QTextStream out(stdout);
     QTextStream in(stdin);
@@ -98,10 +115,20 @@ void addVehicle()
 
     switch (option) {
     case 1:
-        out << addCar(id, brand, model, pricePerDay, isRented);
+        out << addCar(manager,
+                      id,
+                      brand,
+                      model,
+                      pricePerDay,
+                      isRented);
         break;
     case 2:
-        addMotorcycle(id, brand, model, pricePerDay, isRented);
+        addMotorcycle(manager,
+                      id,
+                      brand,
+                      model,
+                      pricePerDay,
+                      isRented);
         break;
     default:
         out << "Failed. Try again" << Qt::endl;

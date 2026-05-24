@@ -6,7 +6,7 @@ void Vehicle::displayInfo() const
     QTextStream out(stdout);
     QTextStream in(stdin);
 
-    out << "Vehicle Specifications:" << Qt::endl;
+    out << "\nVehicle Specifications:" << Qt::endl;
     out << "ID: " << id << Qt::endl;
     out << "Brand: " << brand << Qt::endl;
     out << "Model: " << model << Qt::endl;
