@@ -58,8 +58,9 @@ QString addCar(VehicleManager& manager,
             model,
             pricePerDay,
             isRented,
-            numberOfSeats,
-            numberOfDoors)
+            numberOfDoors,
+            numberOfSeats
+            )
         );
 
     out << "Object created" << Qt::endl;
@@ -77,7 +78,7 @@ void addVehicle(VehicleManager& manager)
     QString brand;
     QString model;
     double pricePerDay;
-    bool isRented;
+    bool isRented = false;
 
     do {
         out << "Type of Vehicle to add:" << Qt::endl;

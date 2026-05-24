@@ -6,9 +6,8 @@ bool rentStatus()
 {
     QTextStream out(stdout);
     QTextStream in(stdin);
-    QString rentStatusString;
 
-    while(1)
+    while(true)
     {
         out << "1. Yes" << Qt::endl;
         out << "2. No" << Qt::endl;
@@ -36,4 +35,5 @@ bool rentStatus()
             out << "Try again" << Qt::endl;
         }
     }
+    return false;
 }
