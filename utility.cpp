@@ -53,6 +53,10 @@ QString validId(VehicleManager& manager)
         {
             out << "ID already exists." << Qt::endl;
             out << "Create a different ID" << Qt::endl;
+        } else if (id.trimmed().isEmpty())
+        {
+            out << "ID cannot be empty." << Qt::endl;
+            out << "Try again." << Qt::end;
         }
         else
         {
