@@ -8,7 +8,9 @@ QString Motorcycle::typeName() const
 
 void Motorcycle::displayInfo() const
 {
-    out << "Type: " << this->typeName() << Qt::endl;
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+
     Vehicle::displayInfo();
     out << "Engine capacity CC: " << engineCapacityCC <<Qt::endl;
 
