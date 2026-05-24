@@ -56,11 +56,35 @@ QString validId(VehicleManager& manager)
         } else if (id.trimmed().isEmpty())
         {
             out << "ID cannot be empty." << Qt::endl;
-            out << "Try again." << Qt::end;
+            out << "Try again." << Qt::endl;
         }
         else
         {
             return id;
         }
+    }
+}
+
+double validPrice()
+{
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+    QString pricePerDayString;
+
+    while (true)
+    {
+        out << "Enter price Per Day: " << Qt::endl;
+        pricePerDayString = in.readLine();
+
+        bool ok;
+
+        double pricePerDay = pricePerDayString.toDouble(&ok);
+
+        if(!ok || pricePerDay < 0)
+        {
+            out << "Invalid price." << Qt::endl;
+            continue;
+        }
+        return pricePerDay;
     }
 }

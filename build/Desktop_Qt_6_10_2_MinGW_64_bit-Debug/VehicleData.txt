@@ -30,3 +30,4 @@ Motorcycle|M014|Indian|ScoutBobber|1350.75|1|1133
 Motorcycle|M015|MVAgusta|Brutale800|1450|0|800
 Car|123|Merc|2016|100.25|0|4|7
 Car|567|Audi|2026|100.25|1|4|5
+Motorcycle|7685|Audi|216|123.56|0|250

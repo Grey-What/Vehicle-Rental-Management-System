@@ -26,7 +26,6 @@ QString addMotorcycle(VehicleManager& manager,
             engineCapacityCC)
         );
 
-    out << "Object created" << Qt::endl;
     return "Success\n";
 }
 
@@ -105,9 +104,7 @@ void addVehicle(VehicleManager& manager)
     out << "Enter model: " << Qt::endl;
     model = in.readLine();
 
-    out << "Enter price Per Day: " << Qt::endl;
-    QString pricePerDayString = in.readLine();
-    pricePerDay = pricePerDayString.toDouble();
+    pricePerDay = validPrice();
 
     out << "Is this vehicle currently rented: " << Qt::endl;
     isRented = rentStatus();

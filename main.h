@@ -18,6 +18,7 @@ inline const QString VEHICLE_FILENAME = "VehicleData.txt";
 void displayMenu();
 bool rentStatus();
 QString validId(VehicleManager& manager);
+double validPrice();
 void addVehicle(VehicleManager& manager);
 
 #endif
