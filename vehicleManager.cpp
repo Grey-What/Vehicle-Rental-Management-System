@@ -33,6 +33,17 @@ void VehicleManager::displayAllVehicles() const
     }
 }
 
+void VehicleManager::displayAvailableVehicles()
+{
+    for (Vehicle* vehicle: vehicles)
+    {
+        if (!vehicle->getIsRented())
+        {
+            vehicle->displayInfo();
+        }
+    }
+}
+
 VehicleManager::~VehicleManager()
 {
     for(Vehicle* vehicle: vehicles)
