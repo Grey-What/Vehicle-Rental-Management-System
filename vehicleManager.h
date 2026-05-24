@@ -22,6 +22,8 @@ public:
 
     void rentVehicle();
 
+    void returnVehicle();
+
     ~VehicleManager();
 };
 

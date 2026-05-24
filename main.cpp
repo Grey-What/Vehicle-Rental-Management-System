@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
             manager.rentVehicle();
             break;
         case 6:
-            //returnVehicle();
+            manager.returnVehicle();
             break;
         case 7:
             break;
