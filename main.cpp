@@ -39,13 +39,13 @@ int main(int argc, char *argv[])
             manager.displayAllVehicles();
             break;
         case 4:
-            //displayAvailableVehicle();
+            manager.displayAvailableVehicles();
             break;
         case 5:
-            //rentVehicle();
+            manager.rentVehicle();
             break;
         case 6:
-            //returnVehicle();
+            manager.returnVehicle();
             break;
         case 7:
             break;

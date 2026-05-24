@@ -18,6 +18,12 @@ public:
 
     void displayAllVehicles() const;
 
+    void displayAvailableVehicles();
+
+    void rentVehicle();
+
+    void returnVehicle();
+
     ~VehicleManager();
 };
 

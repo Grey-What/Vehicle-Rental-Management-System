@@ -8,10 +8,12 @@ QString Car::typeName() const
 
 void Car::displayInfo() const
 {
-    Vehicle::displayInfo();
-    cout << "Number of doors: " << numberOfDoors << endl;
-    cout << "Number of seats: " << numberOfSeats << endl;
+    QTextStream out(stdout);
+    QTextStream in(stdin);
 
+    Vehicle::displayInfo();
+    out << "Number of doors: " << numberOfDoors << Qt::endl;
+    out << "Number of seats: " << numberOfSeats << Qt::endl;
 }
 
 Car::Car(QString id, QString brand, QString model, double pricePerDay,

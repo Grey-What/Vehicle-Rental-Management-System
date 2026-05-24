@@ -12,6 +12,7 @@
 using namespace std;
 
 void displayMenu();
+bool rentStatus();
 void addVehicle(VehicleManager& manager);
 
 #endif
