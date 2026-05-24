@@ -97,8 +97,7 @@ void addVehicle(VehicleManager& manager)
         }
     } while (option != 1 && option != 2);
 
-    out << "Enter id: " << Qt::endl;
-    id = in.readLine();
+    id = validId(manager);
 
     out << "Enter brand: " << Qt::endl;
     brand = in.readLine();

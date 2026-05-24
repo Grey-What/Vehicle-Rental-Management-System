@@ -37,3 +37,26 @@ bool rentStatus()
     }
     return false;
 }
+
+QString validId(VehicleManager& manager)
+{
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+    QString id;
+
+    while (true)
+    {
+        out << "Enter id: " << Qt::endl;
+        id = in.readLine();
+
+        if (manager.idExist(id))
+        {
+            out << "ID already exists." << Qt::endl;
+            out << "Create a different ID" << Qt::endl;
+        }
+        else
+        {
+            return id;
+        }
+    }
+}

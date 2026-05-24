@@ -61,7 +61,7 @@ void VehicleManager::rentVehicle()
             {
                 vehicle->displayInfo();
                 vehicle->setIsRented(true);
-                out << "Success" << Qt::endl;
+                out << "Success!" << Qt::endl;
                 out << "Enjoy the ride!" << Qt::endl;
                 return;
             }
@@ -171,6 +171,18 @@ void VehicleManager::loadFromFile()
         }
     }
     file.close();
+}
+
+bool VehicleManager::idExist(QString id) const
+{
+    for (Vehicle* vehicle : vehicles)
+    {
+        if (vehicle->getId() == id)
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 VehicleManager::~VehicleManager()

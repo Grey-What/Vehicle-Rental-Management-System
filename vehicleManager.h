@@ -23,6 +23,8 @@ public:
     void saveToFile() const;
     void loadFromFile();
 
+    bool idExist(QString id) const;
+
     ~VehicleManager();
 };
 
