@@ -7,6 +7,24 @@ void VehicleManager::addVehicle(Vehicle *vehicle)
     vehicles.push_back(vehicle);
 }
 
+void VehicleManager::searchVehicleID()
+{
+    QTextStream out(stdout);
+    QTextStream in(stdin);
+    QString ID;
+
+    out << "Enter ID: " << Qt::endl;
+    ID = in.readLine();
+
+    for (Vehicle* vehicle: vehicles)
+    {
+        if (ID == vehicle->getId())
+        {
+            vehicle->displayInfo();
+        }
+    }
+}
+
 void VehicleManager::displayAllVehicles() const
 {
     for (Vehicle* vehicle : vehicles)
