@@ -43,3 +43,15 @@ int Car::getNumberOfSeats()
 {
     return numberOfSeats;
 }
+
+void Car::save(QTextStream& out) const
+{
+    out << this->typeName() << "|";
+
+    Vehicle::save(out);
+
+    out << "|"
+        << this->numberOfDoors << "|"
+        << this->numberOfSeats << "\n";
+}
+

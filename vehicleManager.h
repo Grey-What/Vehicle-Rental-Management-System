@@ -13,16 +13,15 @@ private:
 
 public:
     void addVehicle(Vehicle* vehicle);
-
     void searchVehicleID();
-
     void displayAllVehicles() const;
-
     void displayAvailableVehicles();
 
     void rentVehicle();
-
     void returnVehicle();
+
+    void saveToFile() const;
+    void loadFromFile();
 
     ~VehicleManager();
 };
