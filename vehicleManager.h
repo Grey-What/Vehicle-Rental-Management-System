@@ -18,6 +18,8 @@ public:
 
     void displayAllVehicles() const;
 
+    void displayAvailableVehicles();
+
     ~VehicleManager();
 };
 
